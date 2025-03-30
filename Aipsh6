@@ -1,0 +1,36 @@
+import tkinter as tk
+
+# Create the main window
+root = tk.Tk()
+root.title("Goodbye Message")
+
+# Set the window size
+root.geometry("400x200")
+
+# Create a canvas
+canvas = tk.Canvas(root, width=400, height=200)
+canvas.pack()
+
+# Create the text message
+message = "Dear [Name],\n\nHi Sophia baby beh or whatever sweet names we've called each other over the past few months I’ve never felt this way before You make me smile every time we chat and you give me the motivation to go to school every day even when I’m always late I’ve fallen so in love with you and even the little moments we’ve shared hold a special place in my heart I’m so happy for both of us especially because we’ll be graduating together Even though we’ll have to go our separate ways I’m still grateful for everything you do
+
+That’s why I want to say this now When you’re in Batangas I think it would be best if we stop talking for a while I believe it would be good for both of us especially for you I know so much about you and I love every bit of it You’re not hard to love you just need time to heal and find more peace of mind I’m not saying this because I can’t handle you It’s just that I feel a little drained and tired But please understand I still love you
+
+Maybe I feel this way because I remember my past talking stage When I went back to Iloilo she would always ghost me but I chose to understand her Then one day out of nowhere she wanted to talk only to tell me that we should just be friends I gave my all but in the end she still didn’t choose me She even treated her friends better than she treated me and I just couldn’t understand why I deserved that I don’t want to go through that kind of pain again That’s why I’m telling you this now I don’t want you to question yourself or wonder why I’m saying this later on I just don’t want to experience that same heartbreak again
+
+But if someday our paths cross again and we’ve both become better versions of ourselves I would love to have you back in my life And if while we’re not talking you find someone who treats you better than I ever did I want you to choose what makes you happiest You deserve the best and all I’ve ever wanted is what’s good for you
+   \n\nGoodbye,\n[philip]"
+
+# Function to move the text
+def move_text():
+    canvas.move(text_id, 0, -1)
+    canvas.after(50, move_text)
+
+# Add the text to the canvas
+text_id = canvas.create_text(200, 300, text=message, fill="black", font=('Helvetica 12 bold'))
+
+# Start the text moving
+move_text()
+
+# Run the Tkinter event loop
+root.mainloop()
